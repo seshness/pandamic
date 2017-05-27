@@ -4,12 +4,14 @@ import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import HeaderBar from './components/header-bar';
-import EpidemicFAB from './components/epidemic-fab';
+import ShuffleFAB from './components/shuffle-fab';
 import CityList from './containers/city-list';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers';
+
+import pandaTheme from './style/panda-theme';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -20,10 +22,10 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <MuiThemeProvider>
+        <MuiThemeProvider muiTheme={pandaTheme}>
           <div>
             <HeaderBar />
-            <EpidemicFAB />
+            <ShuffleFAB />
             <CityList />
             <div>
               <div>Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
