@@ -16,16 +16,17 @@ function cityColourToMaterialColour(cityColour) {
   }[cityColour];
 }
 
-const CityItem = ({ cityName, onCityClick }) => (
+const CityItem = ({ cityName, onCityClick, ...otherProps }) => (
   <ListItem
     key={cityName}
     primaryText={cityName}
-    onClick={() => onCityClick(cityName)}
+    onTouchTap={() => onCityClick(cityName)}
     leftIcon={
       <LocationCity
         color={cityColourToMaterialColour(allCities[cityName].colour)}
       />
     }
+    {...otherProps}
   />
 );
 

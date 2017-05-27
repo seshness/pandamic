@@ -43,7 +43,12 @@ const SegmentedCityList = function({ segments, onCityClick }) {
   return (
     <div>
       {
-        segments.map((segment) => <CityListSegment {...segment} onCityClick={onCityClick} />)
+        segments.map((segment) => (
+          <CityListSegment
+            key={segment.title}
+            {...segment} onCityClick={onCityClick}
+          />
+        ))
       }
     </div>
   );

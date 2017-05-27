@@ -19,7 +19,7 @@ const CityListSegment = ({ title, cities, ...otherProps }) => {
             <Subheader inset={true}>{title}</Subheader>
         }
         {
-          cities.map(city => <CityItem cityName={city} {...otherProps} />)
+          cities.map(city => <CityItem key={city} cityName={city} {...otherProps} />)
         }
       </List>
     </Paper>
