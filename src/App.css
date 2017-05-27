@@ -1,0 +1,15 @@
+li[data-colour="blue"] {
+  color: #026ecd;
+}
+
+li[data-colour="red"] {
+  color: #b31111;
+}
+
+li[data-colour="black"] {
+  color: #33414a;
+}
+
+li[data-colour="yellow"] {
+  color: #938b3f;
+}
