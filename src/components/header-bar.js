@@ -6,7 +6,7 @@ import IconButton from 'material-ui/IconButton';
 
 const HeaderBar = () => (
   <AppBar
-    title="Pandamonium 🐼😰🐛"
+    title="Pandamic 🐼😰🐛"
     showMenuIconButton={false}
     iconElementRight={<IconButton><ActionSearch /></IconButton>}
   />

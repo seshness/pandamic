@@ -12,17 +12,15 @@ const CityListSegment = ({ title, cities, ...otherProps }) => {
     return null
   }
   return (
-    <Paper key={title}>
-      <List>
-        {
-          cities.length > 0 &&
-            <Subheader inset={true}>{title}</Subheader>
-        }
-        {
-          cities.map(city => <CityItem key={city} cityName={city} {...otherProps} />)
-        }
-      </List>
-    </Paper>
+    <List key={title}>
+      {
+        cities.length > 0 &&
+          <Subheader inset={true}>{title}</Subheader>
+      }
+      {
+        cities.map(city => <CityItem key={city} cityName={city} {...otherProps} />)
+      }
+    </List>
   );
 };
 

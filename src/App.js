@@ -4,6 +4,7 @@ import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import HeaderBar from './components/header-bar';
+import EpidemicFAB from './components/epidemic-fab';
 import CityList from './containers/city-list';
 
 import { Provider } from 'react-redux';
@@ -22,7 +23,11 @@ class App extends Component {
         <MuiThemeProvider>
           <div>
             <HeaderBar />
+            <EpidemicFAB />
             <CityList />
+            <div>
+              <div>Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
+            </div>
           </div>
         </MuiThemeProvider>
       </Provider>
