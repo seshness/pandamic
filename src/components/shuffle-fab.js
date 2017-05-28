@@ -6,7 +6,7 @@ import zIndex from 'material-ui/styles/zIndex';
 import Epidemic from '../icons/epidemic';
 import AvShuffle from 'material-ui/svg-icons/av/shuffle';
 
-const ShuffleFAB = () => (
+const ShuffleFAB = (props) => (
   <div style={{
     margin: 0,
     top: 'auto',
@@ -16,11 +16,10 @@ const ShuffleFAB = () => (
     position: 'fixed',
     zIndex: zIndex.appBar
   }}>
-    <FloatingActionButton>
+    <FloatingActionButton {...props}>
       <AvShuffle />
     </FloatingActionButton>
   </div>
 );
 
 export default ShuffleFAB;
-

@@ -3,8 +3,8 @@ import './App.css';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import HeaderBar from './components/header-bar';
-import ShuffleFAB from './components/shuffle-fab';
+import HeaderBarContainer from './containers/header-bar-container';
+import ShuffleFABContainer from './containers/shuffle-fab-container';
 import CityList from './containers/city-list';
 
 import { Provider } from 'react-redux';
@@ -24,8 +24,8 @@ class App extends Component {
       <Provider store={store}>
         <MuiThemeProvider muiTheme={pandaTheme}>
           <div>
-            <HeaderBar />
-            <ShuffleFAB />
+            <HeaderBarContainer />
+            <ShuffleFABContainer />
             <CityList />
             <div>
               <div>Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>

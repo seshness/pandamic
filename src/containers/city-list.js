@@ -8,16 +8,16 @@ import CityListSegment from '../components/city-list-segment';
 const mapStateToProps = (state) => {
   const topOfDeckCities = {
     title: 'Top of Deck',
-    cities: state.topOfDeck[0]
+    cities: state.deck.present.topOfDeck[0]
   };
   const discardedCities = {
     title: 'Discard pile',
-    cities: state.infectionDiscardPile,
+    cities: state.deck.present.infectionDiscardPile,
     disabled: true
   };
   const otherCities = {
     title: 'Inconsequential',
-    cities: Array.prototype.concat.apply([], state.topOfDeck.slice(1)) // flatten
+    cities: Array.prototype.concat.apply([], state.deck.present.topOfDeck.slice(1)) // flatten
   };
   return {
     segments: [

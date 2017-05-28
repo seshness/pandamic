@@ -15,7 +15,7 @@ const CityListSegment = ({ title, cities, ...otherProps }) => {
     <List key={title}>
       {
         cities.length > 0 &&
-          <Subheader inset={true}>{title}</Subheader>
+          <Subheader inset={true}>{title + ` (${cities.length})`}</Subheader>
       }
       {
         cities.map(city => <CityItem key={city} cityName={city} {...otherProps} />)
