@@ -1,7 +1,7 @@
 {
-  "name": "pandemonium",
+  "name": "pandamic",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "material-ui": "^0.18.1",
     "react": "^15.5.4",
@@ -28,5 +28,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "license": "BSD-2-Clause"
 }
