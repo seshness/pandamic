@@ -5,13 +5,24 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
 
+import { white } from 'material-ui/styles/colors';
+
 import ContentUndo from 'material-ui/svg-icons/content/undo';
 import ContentRedo from 'material-ui/svg-icons/content/redo';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
+import EpidemicIcon from '../icons/epidemic';
+
 const HeaderBar = ({undo, redo}) => (
   <AppBar
-    title="Pandamic 🐼😰🐛"
+    title={
+      <div>
+        <EpidemicIcon style={{
+          marginRight: '10px'
+        }} color={white} />
+        Pandamic 🐼😰🐞
+      </div>
+    }
     showMenuIconButton={false}
     iconElementRight={
         <IconMenu

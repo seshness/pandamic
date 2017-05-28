@@ -28,7 +28,11 @@ class App extends Component {
             <ShuffleFABContainer />
             <CityList />
             <div>
-              <div>Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
+              <div style={{
+                fontFamily: 'Roboto'
+              }}>
+                Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0
+              </div>
             </div>
           </div>
         </MuiThemeProvider>
