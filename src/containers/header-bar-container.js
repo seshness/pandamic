@@ -1,6 +1,7 @@
 import { ActionCreators as UndoActionCreators } from 'redux-undo';
 import { connect } from 'react-redux';
 
+import { RESET } from '../actions/action-types';
 import HeaderBar from '../components/header-bar';
 
 const mapStateToProps = (state) => {
@@ -25,15 +26,24 @@ const mapDispatchToProps = (dispatch) => {
       onTouchTap: () => {
         dispatch(UndoActionCreators.redo());
       }
+    },
+    reset: {
+      onTouchTap: () => {
+        dispatch({
+          type: RESET
+        })
+      }
     }
   };
 };
 
 const merge = (stateProps, dispatchProps, ownProps) => (
-  Object.assign({
-    undo: Object.assign({}, stateProps.undo, dispatchProps.undo),
-    redo: Object.assign({}, stateProps.redo, dispatchProps.redo)
-  }, ownProps)
+  {
+    undo: { ...stateProps.undo, ...dispatchProps.undo },
+    redo: { ...stateProps.redo, ...dispatchProps.redo },
+    reset: { ...stateProps.reset, ...dispatchProps.reset },
+    ...ownProps
+  }
 );
 
 const HeaderBarContainer = connect(

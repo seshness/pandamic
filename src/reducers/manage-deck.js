@@ -1,6 +1,6 @@
 import undoable, { distinctState } from 'redux-undo'
 
-import { DRAW_CITY, SHUFFLE_DISCARD_PILE } from '../actions/action-types';
+import { DRAW_CITY, RESET, SHUFFLE_DISCARD_PILE } from '../actions/action-types';
 
 import allCities from '../all-cities';
 
@@ -22,12 +22,17 @@ const manageDeck = (previousState, action) => {
         ...previousState,
         infectionDiscardPile: previousState.infectionDiscardPile.concat(drawnCity),
         topOfDeck: newTopOfDeck
-      }
+      };
     case SHUFFLE_DISCARD_PILE:
       return {
         infectionDiscardPile: [],
         topOfDeck: [previousState.infectionDiscardPile.slice().sort()].concat(previousState.topOfDeck)
-      }
+      };
+    case RESET:
+      return {
+        infectionDiscardPile: [],
+        topOfDeck: [Object.keys(allCities).sort()]
+      };
     default:
       return previousState;
   }
