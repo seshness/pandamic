@@ -8,15 +8,13 @@ import ShuffleFABContainer from './containers/shuffle-fab-container';
 import CityList from './containers/city-list';
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './reducers';
 
 import pandaTheme from './style/panda-theme';
 
+import store from './store';
+
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
-
-let store = createStore(rootReducer);
 
 class App extends Component {
   render() {

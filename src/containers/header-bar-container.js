@@ -47,7 +47,7 @@ const merge = (stateProps, dispatchProps, ownProps) => (
 );
 
 const HeaderBarContainer = connect(
-  mapStateToProps, mapDispatchToProps, merge, { pure: true }
+  mapStateToProps, mapDispatchToProps, merge
 )(HeaderBar);
 
 export default HeaderBarContainer;

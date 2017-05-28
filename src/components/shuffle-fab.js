@@ -3,7 +3,6 @@ import React from 'react';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import zIndex from 'material-ui/styles/zIndex';
 
-import Epidemic from '../icons/epidemic';
 import AvShuffle from 'material-ui/svg-icons/av/shuffle';
 
 const ShuffleFAB = (props) => (

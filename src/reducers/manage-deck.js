@@ -28,18 +28,14 @@ const manageDeck = (previousState, action) => {
         infectionDiscardPile: [],
         topOfDeck: [previousState.infectionDiscardPile.slice().sort()].concat(previousState.topOfDeck)
       };
-    case RESET:
-      return {
-        infectionDiscardPile: [],
-        topOfDeck: [Object.keys(allCities).sort()]
-      };
     default:
       return previousState;
   }
 };
 
 const undoableManageDeck = undoable(manageDeck, {
-  filter: distinctState()
+  filter: distinctState(),
+  initTypes: [RESET]
 });
 
 export default undoableManageDeck;
