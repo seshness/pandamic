@@ -15,9 +15,9 @@ const manageDeck = (previousState, action) => {
   switch (action.type) {
     case DRAW_CITY:
       const drawnCity = action.city;
-      const newTopOfDeck = [previousState.topOfDeck[0].filter(function(city) {
-        return city !== drawnCity;
-      })].concat(previousState.topOfDeck.slice(1));
+      const newTopOfDeck = previousState.topOfDeck.map(function(hand) {
+        return hand.filter(city => city !== drawnCity);
+      });
       return {
         ...previousState,
         infectionDiscardPile: previousState.infectionDiscardPile.concat(drawnCity),
@@ -26,7 +26,7 @@ const manageDeck = (previousState, action) => {
     case SHUFFLE_DISCARD_PILE:
       return {
         infectionDiscardPile: [],
-        topOfDeck: [previousState.infectionDiscardPile].concat(previousState.topOfDeck)
+        topOfDeck: [previousState.infectionDiscardPile.slice().sort()].concat(previousState.topOfDeck)
       }
     default:
       return previousState;
